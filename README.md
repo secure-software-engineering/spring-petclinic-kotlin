@@ -1,8 +1,26 @@
-# Kotlin version of the Spring PetClinic Sample Application
-[![Java CI with Gradle](https://github.com/spring-petclinic/spring-petclinic-kotlin/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/spring-petclinic/spring-petclinic-kotlin/actions/workflows/gradle-build.yml)
-[![Docker pulls](https://img.shields.io/docker/pulls/springcommunity/spring-petclinic-kotlin.svg)](https://hub.docker.com/repository/docker/springcommunity/spring-petclinic-kotlin)
+# Vulnerable Spring PetClinic in Kotlin 
 
-This is a [Kotlin](https://kotlinlang.org/) version of the [spring-petclinic][] Application. 
+This is a vulnerable version of the [spring-petclinic-kotlin](https://github.com/spring-petclinic/spring-petclinic-kotlin) Application. 
+
+We built the vulnerable version of the [spring-petclinic-kotlin](https://github.com/spring-petclinic/spring-petclinic-kotlin) similar to the vulnerable [spring-petclinic](https://github.com/contrast-community/spring-petclinic) Java project. For this purpose, we need to add three additional classes (CustomRepositoryFactory, CustomRepositoryFactoryBean, and OwnerRepositoryCustomImpl) to the existing [spring-petclinic-kotlin](https://github.com/spring-petclinic/spring-petclinic-kotlin) project. We followed the below steps to build the vulnerable spring-petclinic-kotlin benchmark project.
+
+1. We first opened the existing [spring-petclinic-kotlin](https://github.com/spring-petclinic/spring-petclinic-kotlin) project in the IntelliJ IDEA IDE.
+2. We created an empty Kotlin class named CustomRepositoryFactory.
+3. We copied the Java source code of the class CustomRepositoryFactory from the vulnerable [spring-petclinic](https://github.com/contrast-community/spring-petclinic) Java project.
+4. We pasted the copied Java source code to the Kotlin class CustomRepositoryFactory in our vulnerable spring-petclinic-kotlin project. Then, the IntelliJ IDEA IDE automatically translates the pasted Java source code to the Kotlin source code.
+5. We repeated steps 2 to 4 for creating the classes CustomRepositoryFactoryBean, and OwnerRepositoryCustomImpl.
+6. Finally, we added the annotation @NoRepositoryBean to the existing OwnerRepository class, similar to the vulnerable [spring-petclinic](https://github.com/contrast-community/spring-petclinic) Java project.
+
+After the automatic translation from the Java code to the Kotlin code, 
+we found an error in the CustomRepositoryFactory class. 
+In the Java [spring-petclinic](https://github.com/contrast-community/spring-petclinic) 
+vulnerable version, there is a method call to 
+the getRepositoryInformation with the second parameter as null value. 
+However, in the Kotlin version, the method getRepositoryInformation 
+requires both parameters to be non-null values. 
+Therefore, the Kotlin compiler gave an error "Null can not be a value
+of a non-null type". We fixed this issue by passing the appropriate object
+to the second parameter.
 
 ## Technologies used
 
