@@ -1,2 +1,4 @@
-# spring-petclinic-kotlin
-Vulnerable version of the Spring PetClinic application in Kotlin
+# Master Thesis of Ranjith Krishnamurthy
+
+Master Thesis of Ranjith Krishnamurthy (supervised by Goran Piskachev)
+Topic: Data-flow analysis for Kotlin
