@@ -1,8 +1,12 @@
 # Vulnerable Spring PetClinic in Kotlin 
 
-This is a vulnerable version of the [spring-petclinic-kotlin](https://github.com/spring-petclinic/spring-petclinic-kotlin) Application. 
+This is a vulnerable version of the [spring-petclinic-kotlin](https://github.com/spring-petclinic/spring-petclinic-kotlin) application. 
+This application contains hibernate injection security vulnerabilities and can be used as an example project to test/compare vulnerability detection tools, such as static and/or dynamic analysis security testing tools (SAST/DAST). 
 
-We built the vulnerable version of the [spring-petclinic-kotlin](https://github.com/spring-petclinic/spring-petclinic-kotlin) similar to the vulnerable [spring-petclinic](https://github.com/contrast-community/spring-petclinic) Java project. For this purpose, we need to add three additional classes (CustomRepositoryFactory, CustomRepositoryFactoryBean, and OwnerRepositoryCustomImpl) to the existing [spring-petclinic-kotlin](https://github.com/spring-petclinic/spring-petclinic-kotlin) project. We followed the below steps to build the vulnerable spring-petclinic-kotlin benchmark project.
+
+## How did we create this vulnerable version?
+
+We built the vulnerable version of the [spring-petclinic-kotlin](https://github.com/spring-petclinic/spring-petclinic-kotlin) similar to the vulnerable [spring-petclinic](https://github.com/contrast-community/spring-petclinic) Java project. For this purpose, we added three additional classes (CustomRepositoryFactory, CustomRepositoryFactoryBean, and OwnerRepositoryCustomImpl) to the existing [spring-petclinic-kotlin](https://github.com/spring-petclinic/spring-petclinic-kotlin) project. We followed the steps below to build the vulnerable spring-petclinic-kotlin benchmark project.
 
 1. We first opened the existing [spring-petclinic-kotlin](https://github.com/spring-petclinic/spring-petclinic-kotlin) project in the IntelliJ IDEA IDE.
 2. We created an empty Kotlin class named CustomRepositoryFactory.
