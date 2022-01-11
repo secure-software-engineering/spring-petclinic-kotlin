@@ -143,15 +143,7 @@ Here is a list of them:
 
 # Contributing
 
-The [issue tracker][] is the preferred channel for bug reports, features requests and submitting pull requests.
-
-For pull requests, editor preferences are available in the [editor config](.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
-
-
-[issue tracker]: https://github.com/spring-petclinic/spring-petclinic-kotlin/issues
-[spring-petclinic]: https://github.com/spring-projects/spring-petclinic
-[spring-petclinic-angularjs]: https://github.com/spring-petclinic/spring-petclinic-angularjs 
-
+Contributions with code that injects new vulnerabilities are welcomed. Please create a pull request for that purpuse. 
 
 
 
