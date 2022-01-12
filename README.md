@@ -1,7 +1,7 @@
 # Vulnerable Spring PetClinic in Kotlin 
 
 This is a vulnerable version of the [spring-petclinic-kotlin](https://github.com/spring-petclinic/spring-petclinic-kotlin) application. 
-This application contains hibernate injection security vulnerabilities and can be used as an example project to test/compare vulnerability detection tools, such as static and/or dynamic analysis security testing tools (SAST/DAST). 
+This application contains security vulnerabilities (hibernate injection, cross-site scripting, use of MD5, etc.) and can be used as an example project to test/compare vulnerability detection tools, such as static and/or dynamic analysis security testing tools (SAST/DAST). 
 
 
 ## How did we create this vulnerable version?
